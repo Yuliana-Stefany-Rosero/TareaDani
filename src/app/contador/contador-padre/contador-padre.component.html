@@ -1,0 +1,21 @@
+<table class=" table table-striped table-primary --bs-primary-border-subtle">
+  <thead>
+    <tr >
+      <th>Nombre Botón</th>
+      <th>Contador</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of contadorItems">
+      <td>{{ item.nombreBoton }}</td>
+      <td>
+        <app-contador-hijo
+          [contadorItem]="item"
+
+        >  </app-contador-hijo>
+      </td>
+      <td>{{ item.estado ? 'Activo' : 'Inactivo' }}</td>
+    </tr>
+  </tbody>
+</table>
