@@ -1,15 +1,25 @@
 <!--Botones-->
 
+<div class="container">
+  <div class="row">
+     <div *ngIf="contadorItem.estado" class="col-6" >
 
-<div *ngIf="contadorItem.estado">
+      <button class="btn btn-primary marginContador" (click)="incrementarContador()"> Incrementar </button>
 
-  <button class="btn btn-primary" (click)="incrementarContador()"> Incrementar </button>
+      <button class="btn btn-success marginContador">{{ contadorItem.contador }}</button>
 
-  <button class="btn btn-success">{{ contadorItem.contador }}</button>
+      <button class="btn btn-primary marginContador" (click)="decrementarContador()"> Decrementar </button>
 
-  <button class="btn btn-primary" (click)="decrementarContador()"> Decrementar </button>
+     </div>
+     <div class="col-6">
+      <button class="btn btn-danger" (click)="desactivarContador()"
+      *ngIf="contadorItem.estado === true"> Desactivar </button>
 
-  <button class="btn btn-danger" (click)="desactivarContador()"> Desactivar </button>
+      <button class="btn btn-danger" (click)="activarContador()"
+      *ngIf="contadorItem.estado === false">Activar</button>
+    </div>
+  </div>
+
 
 
 </div>

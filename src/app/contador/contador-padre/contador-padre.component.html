@@ -8,14 +8,14 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of contadorItems">
-      <td>{{ item.nombreBoton }}</td>
-      <td>
+      <td *ngIf="item.estado === true">{{ item.nombreBoton }}</td>
+      <td  >
         <app-contador-hijo
           [contadorItem]="item"
 
         >  </app-contador-hijo>
       </td>
-      <td>{{ item.estado ? 'Activo' : 'Inactivo' }}</td>
+      <td *ngIf="item.estado === true">{{ item.estado ? 'Activo' : 'Inactivo' }}</td>
     </tr>
   </tbody>
 </table>

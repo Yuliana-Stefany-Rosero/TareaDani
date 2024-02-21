@@ -24,6 +24,9 @@ export class ContadorHijoComponent {
 
   }
 
+  activarContador(){
+    this.contadorItem.estado = true;
+  }
 
 
 }
